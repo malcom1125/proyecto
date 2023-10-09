@@ -24,7 +24,7 @@
 </head>
 <body>
     <h1>Información del Producto</h1>
-    <img src="images/foto2.jfif" alt="foto de librito" width="200px">
+    <img src="foto2.jfif" alt="foto de librito" width="200px">
     <div class="producto-info">
         <?php
         // Simula la obtención de información del producto desde una fuente de datos
