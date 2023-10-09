@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>libretas y pulpitos</h1>
+    </header>
+    
+    <nav>
+        <a href="./index.html">Inicio</a>
+    </nav>
+
+    <section>
+        <h1>Información del Producto</h1>
+        <img src="foto4.jfif" alt="foto de librito" width="200px">
+        <div class="producto-info">
+            <h2 id="nombreProducto"></h2>
+            <p class="precio" id="precioProducto"></p>
+            <p id="descripcionProducto"></p>
+
+            <h3>Características:</h3>
+            <ul id="caracteristicasProducto"></ul>
+        </div>
+        <div class="boton">
+            <button type="button" id="comprarButton">Hacer la compra</button>
+            <button type="button" id="apartarButton">Apartar el producto</button>
+        </div>
+
+        <script>
+            // Simula la obtención de información del producto desde una fuente de datos
+            var producto = {
+                nombre: 'Producto: libreta',
+                descripcion: 'Esta libreta está hecha 100% desde 0.',
+                precio: '$2.000',
+                caracteristicas: [
+                    'Tema: Cafe de Colombia en homero',
+                    'Tamaño: pequeño',
+                    'Disponible: Sí'
+                ]
+            };
+
+            document.getElementById('nombreProducto').textContent = producto.nombre;
+            document.getElementById('precioProducto').textContent = 'Precio: ' + producto.precio;
+            document.getElementById('descripcionProducto').textContent = producto.descripcion;
+
+            var caracteristicasList = document.getElementById('caracteristicasProducto');
+            producto.caracteristicas.forEach(function(caracteristica) {
+                var li = document.createElement('li');
+                li.textContent = caracteristica;
+                caracteristicasList.appendChild(li);
+            });
+
+            document.getElementById('comprarButton').addEventListener('click', function() {
+                alert('¡Gracias por comprar nuestro producto! 😊');
+            });
+
+            document.getElementById('apartarButton').addEventListener('click', function() {
+                var pc = Math.floor(Math.random() * 30) + 1; // Generar un número aleatorio entre 1 y 30
+                alert('Usted ha apartado este producto. Quedan ' + pc + ' unidades');
+            });
+        </script>
+    </section>
+
+    <footer>
+        &copy; 2023 Mi Proyecto
+    </footer>
+</body>
+</html>
